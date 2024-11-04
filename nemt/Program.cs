@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using nemt;
 
 Console.WriteLine("Hello, World!");
@@ -16,4 +17,5 @@ using (nemtContext context = new())
     //UndoneTasks
     var alltasksNotDone = context.Tasks.Include(task => task.Todos).Where(x =>x.Todos.Any(x => x.IsDone == false));
     foreach(var task in alltasksNotDone) { Console.WriteLine(task.Name); }
+
 }
