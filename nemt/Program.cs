@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using nemt;
+using nemt.models;
 
 Console.WriteLine("Hello, World!");
 
@@ -19,3 +20,6 @@ using (nemtContext context = new())
     foreach(var task in alltasksNotDone) { Console.WriteLine(task.Name); }
 
 }
+Printer.PrintTeamProgress();
+Printer.PrintTeamCurrentTask();
+Printer.PrintTeamsWithoutTasks();

@@ -14,7 +14,4 @@ public class Todo
     public Task task { get; set; }
     public int TaskId { get; set; }
 
-    public int WorkerId { get; set; }
-
-    public Worker Worker { get; set; }
 }

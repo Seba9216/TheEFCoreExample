@@ -14,8 +14,8 @@ public class Team
     public List<TeamWorker> Workers { get; set; }
 
     public int CurrentTaskId { get; set; }
-    public Task CurrentTask { get; set; }
+    public Task? CurrentTask { get; set; }
 
-    public List<Task> tasks { get; set; }
+    public List<Task>? tasks { get; set; }
 }
 

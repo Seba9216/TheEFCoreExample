@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using nemt.models;
 using System.Reflection.Emit;
+using System.Threading.Tasks;
 using Task = nemt.models.Task;
 namespace nemt;
 
@@ -19,12 +20,25 @@ internal class nemtContext : DbContext
     {
         optionsBuilder.UseSqlServer("Server=H52114\\MYLOCALSQLSERVER;Initial Catalog=Efcore;Trusted_Connection=False;User Id=sa;Password=IamBornTobeWild11+!;TrustServerCertificate=True");
     }
-    public Task SeedTasks()
+    public List<Task> SeedTasks()
     {
-        var thetask = new Task
+        var thetask = new List<Task>
         {
-            TaskId = 100,
-            Name = "MySuperAmazingTask"
+            new Task
+            {
+                TaskId = 100,
+                Name = "MySuperAmazingTask"
+            },
+            new Task
+            {
+                TaskId = 99,
+                Name = "MySuperAmazingTask1"
+            },new Task
+            {
+                TaskId = 98,
+                Name = "MySuperAmazingTask2"
+            },
+
         };
         return thetask;
     }
@@ -159,18 +173,19 @@ internal class nemtContext : DbContext
             {
                  Name = "FrontEnd",
                  TeamId = 1,
-
+                 CurrentTaskId = 100,
             },
             new Team
             {
                 Name = "BackEnd",
-                TeamId = 2
+                TeamId = 2,
+                CurrentTaskId= 99,
             },
             new Team
             {
                 Name = "Testers",
                 TeamId = 3,
-
+                CurrentTaskId = 98
             }
         };
 

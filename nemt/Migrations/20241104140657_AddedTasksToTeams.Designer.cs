@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using nemt;
 
@@ -11,9 +12,11 @@ using nemt;
 namespace nemt.Migrations
 {
     [DbContext(typeof(nemtContext))]
-    partial class nemtContextModelSnapshot : ModelSnapshot
+    [Migration("20241104140657_AddedTasksToTeams")]
+    partial class AddedTasksToTeams
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
